@@ -205,15 +205,16 @@ export default {
 /*********************** 总容器 ***********************/
 .wrapper {
   width: 100%;
-  background-color: #fff !important;
-  color: #222 !important;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #222;
 }
 header, nav, section, footer, .report, .doctor, .assess, .info {
-  background-color: #fff !important;
-  color: #222 !important;
+  background-color: #fff;
+  color: #222;
 }
 .fa, .iconfont {
-  color: #222 !important;
+  color: #222;
 }
 
 /*********************** header ***********************/

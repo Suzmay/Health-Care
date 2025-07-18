@@ -9,128 +9,29 @@
         <div class="top-ban"></div>
 
         <ul class="setmeal">
-            <li>
+            <li v-for="(setmeal,index) in setmealArr" :key="setmeal.smId">
                 <div class="item">
-                    <div class="item-left" onclick="location.href='selectdate.html'">
-                        <h3>男士套餐</h3>
-                        <p>普通男士客户-基础套餐</p>
+                    <div class="item-left" @click="toSelectdate(setmeal.smId)">
+                        <h3>{{ setmeal.type==1?"男士":"女士" }}套餐</h3>
+                        <p>{{setmeal.name}}</p>
+                        <div class="price">¥{{setmeal.price}}</div>
                     </div>
-                    <div class="item-right">
+                    <div class="item-right" @click="isShowEvent(index)">
                         <p>详情</p>
-                        <i class="fa fa-angle-down"></i>
+                        <i class="fa fa-angle-down" :class="{rotate: setmeal.isShow}"></i>
                     </div>
                 </div>
-                <div class="item-content">
+                <div class="item-content" v-show="setmeal.isShow">
                     <table>
                         <tr>
                             <th>检查项目</th>
                             <th>检查内容</th>
                             <th>检查意义</th>
                         </tr>
-                        <tr>
-                            <td>一般检查</td>
-                            <td>血压、身高、体重、腰围、臀围。</td>
-                            <td>通过仪器测定人体基本健康指标。</td>
-                        </tr>
-                        <tr>
-                            <td>血常规</td>
-                            <td>
-                                血常规24项: 中性粒细胞计数绝对值、红细胞压值、血小板比容、单核细胞计数百分比、平均血小板体积、
-                                大血小板比例、嗜碱性粒细胞计数百分比、平均血红蛋白含量等。
-                            </td>
-                            <td>临床三大常规检测之一，是最基本的血液检验。通过观察血细胞的数量变化及形态分布，从而判断血液状况及相关疾病。</td>
-                        </tr>
-                        <tr>
-                            <td>尿常规</td>
-                            <td>
-                                尿维生素C测定、尿比重测定、尿液酮体测定、尿胆红素测定、尿亚硝酸盐测定、尿液颜色、尿白细胞计数、尿蛋白定性、
-                                尿液镜检、尿葡萄糖测定、尿液隐血、尿液酸碱度、尿液清晰度、尿胆原。
-                            </td>
-                            <td>临床三大常规检测之一，可反映机体的代谢状况，是很多疾病诊断的重要指标。</td>
-                        </tr>
-                    </table>
-                </div>
-            </li>
-            <li>
-                <div class="item">
-                    <div class="item-left" onclick="location.href='selectdate.html'">
-                        <h3>男士套餐</h3>
-                        <p>普通男士客户-脑血管系统</p>
-                    </div>
-                    <div class="item-right">
-                        <p>详情</p>
-                        <i class="fa fa-angle-down"></i>
-                    </div>
-                </div>
-                <div class="item-content">
-                    <table>
-                        <tr>
-                            <th>检查项目</th>
-                            <th>检查内容</th>
-                            <th>检查意义</th>
-                        </tr>
-                        <tr>
-                            <td>一般检查</td>
-                            <td>血压、身高、体重、腰围、臀围。</td>
-                            <td>通过仪器测定人体基本健康指标。</td>
-                        </tr>
-                        <tr>
-                            <td>血常规</td>
-                            <td>
-                                血常规24项: 中性粒细胞计数绝对值、红细胞压值、血小板比容、单核细胞计数百分比、平均血小板体积、
-                                大血小板比例、嗜碱性粒细胞计数百分比、平均血红蛋白含量等。
-                            </td>
-                            <td>临床三大常规检测之一，是最基本的血液检验。通过观察血细胞的数量变化及形态分布，从而判断血液状况及相关疾病。</td>
-                        </tr>
-                        <tr>
-                            <td>尿常规</td>
-                            <td>
-                                尿维生素C测定、尿比重测定、尿液酮体测定、尿胆红素测定、尿亚硝酸盐测定、尿液颜色、尿白细胞计数、尿蛋白定性、
-                                尿液镜检、尿葡萄糖测定、尿液隐血、尿液酸碱度、尿液清晰度、尿胆原。
-                            </td>
-                            <td>临床三大常规检测之一，可反映机体的代谢状况，是很多疾病诊断的重要指标。</td>
-                        </tr>
-                    </table>
-                </div>
-            </li>
-            <li>
-                <div class="item">
-                    <div class="item-left" onclick="location.href='selectdate.html'">
-                        <h3>男士套餐</h3>
-                        <p>普通男士客户-肝病检查</p>
-                    </div>
-                    <div class="item-right">
-                        <p>详情</p>
-                        <i class="fa fa-angle-down"></i>
-                    </div>
-                </div>
-                <div class="item-content">
-                    <table>
-                        <tr>
-                            <th>检查项目</th>
-                            <th>检查内容</th>
-                            <th>检查意义</th>
-                        </tr>
-                        <tr>
-                            <td>一般检查</td>
-                            <td>血压、身高、体重、腰围、臀围。</td>
-                            <td>通过仪器测定人体基本健康指标。</td>
-                        </tr>
-                        <tr>
-                            <td>血常规</td>
-                            <td>
-                                血常规24项: 中性粒细胞计数绝对值、红细胞压值、血小板比容、单核细胞计数百分比、平均血小板体积、
-                                大血小板比例、嗜碱性粒细胞计数百分比、平均血红蛋白含量等。
-                            </td>
-                            <td>临床三大常规检测之一，是最基本的血液检验。通过观察血细胞的数量变化及形态分布，从而判断血液状况及相关疾病。</td>
-                        </tr>
-                        <tr>
-                            <td>尿常规</td>
-                            <td>
-                                尿维生素C测定、尿比重测定、尿液酮体测定、尿胆红素测定、尿亚硝酸盐测定、尿液颜色、尿白细胞计数、尿蛋白定性、
-                                尿液镜检、尿葡萄糖测定、尿液隐血、尿液酸碱度、尿液清晰度、尿胆原。
-                            </td>
-                            <td>临床三大常规检测之一，可反映机体的代谢状况，是很多疾病诊断的重要指标。</td>
+                        <tr v-for="checkitem in setmeal.checkitemList" :key="checkitem.ciId">
+                            <td>{{ checkitem.ciName }}</td>
+                            <td>{{ checkitem.ciContent }}</td>
+                            <td>{{ checkitem.meaning }}</td>
                         </tr>
                     </table>
                 </div>
@@ -145,10 +46,12 @@
 <script>
 import { reactive, toRefs } from 'vue';
 import axios from 'axios';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
-export default {
+export default{
     setup(){
+        const router=useRouter();
+        const route=useRoute();
         const state=reactive({
             setmealArr:[]
         })
@@ -161,25 +64,38 @@ export default {
                 .then(response=>{
                     state.setmealArr=response.data.data;
                     console.log(state.setmealArr);
+                    for(let i=0;i<state.setmealArr.length;i++){
+                        state.setmealArr[i].isShow=false;  //给每个套餐加多一个属性，初值是false，用来控制详情的显示
+                    }
                 })
                 .catch(error=>{
                     console.log(error);
                 })
         }
 
+        function isShowEvent(index){
+            state.setmealArr[index].isShow=!state.setmealArr[index].isShow;
+        }
+        
+        function toSelectdate(smId) {
+            router.push({path:"/selectDate",query:{smId:smId,hpId:route.query.hpId}});
+            }
+
         return{
             ...toRefs(state),
-            initSetmealArr
+            initSetmealArr,
+            isShowEvent,
+            toSelectdate
         }
     }
 };
 </script>
 
-<style>
+<style scoped>
 /*********************** 总容器 ***********************/
 .wrapper{
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-color: #F9F9F9;
 }
 
@@ -202,10 +118,10 @@ header{
 }
 header .fa{
     font-size: 8vw;
-    color: #222 !important;
+    color: #222;
 }
 header p {
-    color: #222 !important;
+    color: #222;
     font-size: 4.3vw;
     font-weight: 500;
 }
@@ -287,9 +203,19 @@ footer ul li .fa{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    position: relative; 
     user-select: none;
     cursor: pointer;
+}
+.setmeal li .item .item-left .price {
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4.5vw;
+    color: #ff6b35;
+    font-weight: bold;
+    margin: 0;
 }
 .setmeal li .item .item-left h3{
     font-size: 4.3vw;
@@ -340,5 +266,12 @@ footer ul li .fa{
     border: solid 1px #EFEFEF;
     box-sizing: border-box;
     padding: 2vw;
+}
+.setmeal li .item .item-right .fa.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+.setmeal li .item .item-right .fa {
+    transition: transform 0.3s;
 }
 </style>

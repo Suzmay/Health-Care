@@ -82,7 +82,7 @@ export default {
     }
 
     function toSetmeal(hpId){
-      router.push({path:"/setmeal",query:{hpId:hpId}})
+      router.push({path:"/setMeal",query:{hpId:hpId}})
     }
 
     return{
@@ -114,7 +114,7 @@ export default {
 /*********************** 总容器 ***********************/
 .wrapper {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: #f9f9f9;
 }
 
